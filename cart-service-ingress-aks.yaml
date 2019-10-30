@@ -1,0 +1,15 @@
+--- 
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cart-service
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - host: cart.4b283f3f58a749c38a6f.southeastasia.aksapp.io
+    http:
+      paths:
+      - backend:
+          serviceName: cart-service
+          servicePort: 80  
